@@ -1,4 +1,9 @@
-import { StyledInput } from "./Input.styles";
+import { useState } from "react";
+import {
+  DimensionsContainer,
+  StyledInput,
+  StyledInputContainer,
+} from "./Input.styles";
 import { InputPropTypes } from "./Input.types";
 
 export const Input = ({
@@ -6,12 +11,24 @@ export const Input = ({
   value,
   onChange,
   name,
+  dimensions = "px",
 }: InputPropTypes): JSX.Element => {
+  const [focused, setFocused] = useState(false);
+
+  const onFocus = () => setFocused(true);
+  const onBlur = () => setFocused(false);
+
   return (
-    <StyledInput
-      value={value ?? defaultValue}
-      onChange={onChange}
-      name={name}
-    />
+    <StyledInputContainer focused={focused}>
+      <StyledInput
+        value={value ?? defaultValue}
+        onChange={onChange}
+        name={name}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        focused={focused}
+      />
+      <DimensionsContainer>{dimensions}</DimensionsContainer>
+    </StyledInputContainer>
   );
 };
