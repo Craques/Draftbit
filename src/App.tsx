@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import { PropertiesPanel } from "./PropertiesPanel.gen";
+import { Input } from "./components/atoms/Input.component";
 
 function App() {
   return (
     <div className="App">
-      <PropertiesPanel />
+      <Input name="margin-left" value="hello" />
     </div>
   );
 }

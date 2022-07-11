@@ -5,6 +5,6 @@ export interface InputPropTypes {
   focused?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFocus?: () => void;
-  value?: string;
-  name?: string;
+  value: string;
+  name: string;
 }
