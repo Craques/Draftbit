@@ -21,7 +21,7 @@ export const Collapsible: React.FC<CollapsibleProps> = ({
         <StyledInfoIcon size={24} />
       </StyledTitleContainer>
 
-      {isOpen ? <CollapsibleBody>{children}</CollapsibleBody> : null}
+      <CollapsibleBody isOpen={isOpen}>{children}</CollapsibleBody>
     </div>
   );
 };
