@@ -1,7 +1,7 @@
 import React from "react";
 
 export interface InputPropTypes {
-  defaultValue?: string;
+  placeholder?: string;
   focused?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (fieldName: string, fieldValue: string) => void;

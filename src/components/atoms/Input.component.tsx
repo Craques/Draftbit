@@ -2,13 +2,13 @@ import { useState } from "react";
 import { StyledInput, StyledInputContainer } from "./Input.styles";
 import { InputPropTypes } from "./Input.types";
 
-export const Input = ({
-  defaultValue = "auto",
+export const Input: React.FC<InputPropTypes> = ({
+  placeholder = "auto",
   value = "",
   onChange,
   onBlur,
   name,
-}: InputPropTypes): JSX.Element => {
+}): JSX.Element => {
   const [focused, setFocused] = useState(false);
   const onFocus = () => setFocused(true);
 
@@ -16,12 +16,11 @@ export const Input = ({
     onBlur && onBlur(name!, value);
     setFocused(false);
   };
-  const hasUpdatedValue = value !== defaultValue;
 
   return (
     <StyledInputContainer
       focused={focused}
-      hasUpdatedValue={hasUpdatedValue}
+      hasUpdatedValue={!!value.length}
       value={value}
     >
       <StyledInput
@@ -31,8 +30,7 @@ export const Input = ({
         onFocus={onFocus}
         onBlur={onInputBlur}
         focused={focused}
-        width={value?.length ? value.length : defaultValue.length}
-        placeholder={defaultValue}
+        placeholder={placeholder}
         hasUpdatedValue={!!value.length}
       />
     </StyledInputContainer>

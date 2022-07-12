@@ -4,13 +4,13 @@ import { InputPropTypes } from "./Input.types";
 //may add an overall theme to handle sizing and colors
 
 export const StyledInput = styled.input<InputPropTypes>`
-  padding-bottom: 12px;
-  padding-top: 12px;
+  padding-bottom: 8px;
+  padding-top: 8px;
   background-color: transparent;
   outline: none;
   color: inherit;
   text-decoration-line: underline;
-  text-underline-offset: 2px;
+
   text-decoration-color: ${({ focused, hasUpdatedValue }) =>
     !focused && hasUpdatedValue ? "#fdd600" : "transparent"};
   text-decoration-style: dotted;
@@ -19,7 +19,7 @@ export const StyledInput = styled.input<InputPropTypes>`
   border: none;
   flex-shrink: 1;
   font-size: inherit;
-  width: ${({ width }) => width}em;
+  width: 4em;
   ::placeholder {
     color: #a5b0c6;
   }
@@ -31,14 +31,12 @@ export const StyledInputContainer = styled.div<InputPropTypes>`
   outline-width: 2px;
   outline-width: ${({ focused }) => (focused ? 2 : 0)}px;
   outline-style: solid;
-  padding-left: 8px;
-  padding-right: 8px;
   display: flex;
   flex-direction: row;
   width: max-content;
   justify-content: center;
-  border-radius: 8px;
-  font-size: 1em;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: bold;
   color: ${({ focused, hasUpdatedValue, value }) =>
     (focused || hasUpdatedValue) && value?.length ? "white" : "#a5b0c6"};
@@ -51,6 +49,6 @@ export const DimensionsContainer = styled.div`
   align-items: center;
   justify-items: center;
   margin-left: 4px;
-  margin-right: 16px;
+  margin-right: 8px;
   color: inherit;
 `;
