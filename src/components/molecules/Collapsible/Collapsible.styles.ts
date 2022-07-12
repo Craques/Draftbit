@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
+import { Info } from "@styled-icons/evaicons-solid/Info";
 
 export const StyledTitleContainer = styled.button`
   background-color: #3d4b6c;
@@ -14,12 +16,13 @@ export const StyledTitleContainer = styled.button`
   border: none;
 `;
 
-export const LeftIconContainer = styled.div`
+export const StyledCaretDown = styled(CaretDown)`
   margin-right: 8px;
 `;
 
-export const RightIconContainer = styled.div`
+export const StyledInfoIcon = styled(Info)`
   margin-left: 8px;
+  color: #a5b0c6;
 `;
 
 export const CollapsibleBody = styled.div`

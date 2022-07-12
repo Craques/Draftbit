@@ -1,8 +1,8 @@
 import React from "react";
 import {
   CollapsibleBody,
-  LeftIconContainer,
-  RightIconContainer,
+  StyledCaretDown,
+  StyledInfoIcon,
   StyledTitleContainer,
 } from "./Collapsible.styles";
 import { CollapsibleProps } from "./Collapsible.types";
@@ -14,9 +14,9 @@ export const Collapsible: React.FC<CollapsibleProps> = ({
   return (
     <div>
       <StyledTitleContainer>
-        <LeftIconContainer></LeftIconContainer>
+        <StyledCaretDown size={24} />
         <label>{label}</label>
-        <RightIconContainer></RightIconContainer>
+        <StyledInfoIcon size={24} />
       </StyledTitleContainer>
 
       <CollapsibleBody>{children}</CollapsibleBody>

@@ -7,7 +7,7 @@ import { PropertiesPanel } from "./components/organisms/PropertiesPanel/Properti
 function App() {
   return (
     <div>
-      <Collapsible label="Hello">
+      <Collapsible label="Margins & Padding">
         <PropertiesPanel />
       </Collapsible>
     </div>
