@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
 import "./App.css";
 import { Collapsible } from "./components/molecules/Collapsible/Collapsible.component";
 
 import { PropertiesPanel } from "./components/organisms/PropertiesPanel/PropertiesPanel.component";
+import { theme } from "./theme/theme";
 
 function App() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -43,19 +45,21 @@ function App() {
   //may need to implement provider to handle state;
 
   return (
-    <div>
-      <Collapsible
-        onToggle={onToggle}
-        isOpen={isOpen}
-        label="Margins & Padding"
-      >
-        <PropertiesPanel
-          onChange={onChange}
-          onBlur={onBlur}
-          propertyValues={propertyValues}
-        />
-      </Collapsible>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Collapsible
+          onToggle={onToggle}
+          isOpen={isOpen}
+          label="Margins & Padding"
+        >
+          <PropertiesPanel
+            onChange={onChange}
+            onBlur={onBlur}
+            propertyValues={propertyValues}
+          />
+        </Collapsible>
+      </div>
+    </ThemeProvider>
   );
 }
 
