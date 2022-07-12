@@ -10,5 +10,4 @@ export interface InputPropTypes {
   name?: string;
   dimensions?: string;
   width?: number;
-  hasUpdatedValue?: boolean;
 }

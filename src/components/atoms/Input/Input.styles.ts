@@ -39,10 +39,8 @@ export const StyledInputContainer = styled.div<InputPropTypes>`
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
-  color: ${({ focused, hasUpdatedValue, value, theme }) =>
-    (focused || hasUpdatedValue) && value?.length
-      ? "white"
-      : theme.colors.placeholderText};
+  color: ${({ focused, value, theme }) =>
+    focused || value?.length ? "white" : theme.colors.placeholderText};
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 `;

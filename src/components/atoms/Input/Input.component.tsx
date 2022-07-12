@@ -18,11 +18,7 @@ export const Input: React.FC<InputPropTypes> = ({
   };
 
   return (
-    <StyledInputContainer
-      focused={focused}
-      hasUpdatedValue={!!value.length}
-      value={value}
-    >
+    <StyledInputContainer focused={focused} value={value}>
       <StyledInput
         value={value}
         onChange={onChange}
@@ -31,7 +27,6 @@ export const Input: React.FC<InputPropTypes> = ({
         onBlur={onInputBlur}
         focused={focused}
         placeholder={placeholder}
-        hasUpdatedValue={!!value.length}
       />
     </StyledInputContainer>
   );
