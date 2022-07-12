@@ -5,6 +5,8 @@ export const Column = styled.div`
   flex-direction: column;
   flex-shrink: 1;
   align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
   justify-content: center;
 `;
 
@@ -22,7 +24,7 @@ export const PropertiesInputContainer = styled.div`
 `;
 
 export const ChildContainer = styled.div<{ hasChildren: boolean }>`
-  border-width: 20px;
+  border-width: 4px;
   border-color: ${({ hasChildren }) =>
     hasChildren ? "#28334d" : "transparent"};
   border-style: solid;
