@@ -2,6 +2,7 @@
   "name": "@draftbit/coding-challenge-prism",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://craques.github.io/draftbit/",
   "dependencies": {
     "@rescript/react": "^0.10.3",
     "@testing-library/jest-dom": "^5.11.4",
@@ -26,7 +27,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "re:build": "rescript",
-    "re:start": "rescript build -w"
+    "re:start": "rescript build -w",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
