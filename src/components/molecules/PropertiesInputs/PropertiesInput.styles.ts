@@ -21,6 +21,7 @@ export const Row = styled.div`
 export const PropertiesInputContainer = styled.div`
   background-color: #3d4b6c;
   display: flex;
+  border-radius: 8px;
 `;
 
 export const ChildContainer = styled.div<{ hasChildren: boolean }>`
