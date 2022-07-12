@@ -1,8 +1,8 @@
 import React from "react";
 import { PropertiesInput } from "../../molecules/PropertiesInputs/PropertiesInputs.component";
-import { PropertiesPanelProps } from "./PropertiesPanel.types";
+import { PrismProps } from "./Prism.types";
 
-export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({
+export const Prism: React.FC<PrismProps> = ({
   onChange,
   onBlur,
   propertyValues,

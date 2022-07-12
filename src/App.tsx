@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
 import { Collapsible } from "./components/molecules/Collapsible/Collapsible.component";
-
-import { PropertiesPanel } from "./components/organisms/PropertiesPanel/PropertiesPanel.component";
+import { Prism } from "./components/organisms/Prism/Prism.component";
 import { theme } from "./theme/theme";
 
 function App() {
@@ -17,6 +16,7 @@ function App() {
     {},
   );
 
+  //may need to implement provider to handle state;
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setPropertyValues({ ...propertyValues, [name]: value });
@@ -42,23 +42,19 @@ function App() {
     }
   };
 
-  //may need to implement provider to handle state;
-
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <Collapsible
-          onToggle={onToggle}
-          isOpen={isOpen}
-          label="Margins & Padding"
-        >
-          <PropertiesPanel
-            onChange={onChange}
-            onBlur={onBlur}
-            propertyValues={propertyValues}
-          />
-        </Collapsible>
-      </div>
+      <Collapsible
+        onToggle={onToggle}
+        isOpen={isOpen}
+        label="Margins & Padding"
+      >
+        <Prism
+          onChange={onChange}
+          onBlur={onBlur}
+          propertyValues={propertyValues}
+        />
+      </Collapsible>
     </ThemeProvider>
   );
 }
