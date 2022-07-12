@@ -22,7 +22,7 @@ function App() {
 
   const onBlur = (fieldName: string, fieldValue: string) => {
     if (fieldValue?.length) {
-      const expression = new RegExp(/^\d+(pt|px)$/);
+      const expression = new RegExp(/^\d+(em|ex|%|px|cm|mm|in|pt|pc)$/);
       const isValid = expression.test(fieldValue.replace(" ", ""));
       if (isValid) {
         setPropertyValues({
