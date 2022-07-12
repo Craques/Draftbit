@@ -8,7 +8,7 @@ export const StyledInput = styled.input<InputPropTypes>`
   padding-top: 12px;
   background-color: transparent;
   outline: none;
-  color: white;
+  color: inherit;
   text-decoration-line: underline;
   text-underline-offset: 1px;
   text-decoration-color: #fdd600;
@@ -23,8 +23,10 @@ export const StyledInput = styled.input<InputPropTypes>`
 
 export const StyledInputContainer = styled.div<InputPropTypes>`
   background-color: ${({ focused }) => (focused ? "#28334d" : "transparent")};
-  border-color: #1d8cbe;
-  border-width: ${({ focused }) => (focused ? 2 : 0)}px;
+  outline-color: #1d8cbe;
+  outline-width: 2px;
+  outline-width: ${({ focused }) => (focused ? 2 : 0)}px;
+  outline-style: solid;
   padding-left: 8px;
   padding-right: 8px;
   display: flex;
@@ -34,6 +36,7 @@ export const StyledInputContainer = styled.div<InputPropTypes>`
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
+  color: ${({ focused }) => (focused ? "white" : "#a5b0c6")};
 `;
 
 export const DimensionsContainer = styled.div`
@@ -43,4 +46,5 @@ export const DimensionsContainer = styled.div`
   font-size: 16px;
   margin-left: 4px;
   margin-right: 16px;
+  color: inherit;
 `;

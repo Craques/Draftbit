@@ -5,8 +5,16 @@ import { PropertiesInput } from "./components/molecules/PropertiesInputs.compone
 function App() {
   return (
     <div className="App">
-      <PropertiesInput onChange={(e) => null} property="margin">
-        <PropertiesInput onChange={(e) => null} property="padding" />
+      <PropertiesInput
+        onChange={(e) => null}
+        property="margin"
+        propertyValues={{}}
+      >
+        <PropertiesInput
+          onChange={(e) => null}
+          property="padding"
+          propertyValues={{}}
+        />
       </PropertiesInput>
     </div>
   );

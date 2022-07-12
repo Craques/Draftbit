@@ -13,12 +13,17 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
   children,
   onChange,
   property,
+  propertyValues,
 }) => {
   return (
     <PropertiesInputContainer>
       <Row>
         <Column>
-          <Input onChange={onChange} name={`${property}-left`} />
+          <Input
+            onChange={onChange}
+            name={`${property}-left`}
+            value={propertyValues[`${property}-left`]}
+          />
         </Column>
         <Column>
           <CenterColumnInputContainer>
