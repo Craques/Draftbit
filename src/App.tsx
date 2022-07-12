@@ -1,21 +1,12 @@
 import React from "react";
 import "./App.css";
-import { PropertiesInput } from "./components/molecules/PropertiesInputs.component";
+
+import { PropertiesPanel } from "./components/organisms/PropertiesPanel/PropertiesPanel.component";
 
 function App() {
   return (
-    <div className="App">
-      <PropertiesInput
-        onChange={(e) => null}
-        property="margin"
-        propertyValues={{}}
-      >
-        <PropertiesInput
-          onChange={(e) => null}
-          property="padding"
-          propertyValues={{}}
-        />
-      </PropertiesInput>
+    <div>
+      <PropertiesPanel />
     </div>
   );
 }

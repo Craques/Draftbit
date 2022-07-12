@@ -19,6 +19,9 @@ export const StyledInput = styled.input<InputPropTypes>`
   flex-shrink: 1;
   font-size: inherit;
   width: ${({ width }) => width}em;
+  ::placeholder {
+    color: #a5b0c6;
+  }
 `;
 
 export const StyledInputContainer = styled.div<InputPropTypes>`
@@ -34,7 +37,7 @@ export const StyledInputContainer = styled.div<InputPropTypes>`
   width: max-content;
   justify-content: center;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
   color: ${({ focused }) => (focused ? "white" : "#a5b0c6")};
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -45,7 +48,6 @@ export const DimensionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
-  font-size: 16px;
   margin-left: 4px;
   margin-right: 16px;
   color: inherit;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   DimensionsContainer,
   StyledInput,
@@ -14,20 +14,24 @@ export const Input = ({
   dimensions = "px",
 }: InputPropTypes): JSX.Element => {
   const [focused, setFocused] = useState(false);
-
   const onFocus = () => setFocused(true);
   const onBlur = () => setFocused(false);
+
+  useEffect(() => {
+    console.log("VALUE", value);
+  }, [value]);
 
   return (
     <StyledInputContainer focused={focused}>
       <StyledInput
-        value={value ?? defaultValue}
+        value={value}
         onChange={onChange}
         name={name}
         onFocus={onFocus}
         onBlur={onBlur}
         focused={focused}
         width={value?.length ? value.length : defaultValue.length}
+        placeholder={defaultValue}
       />
       <DimensionsContainer>{dimensions}</DimensionsContainer>
     </StyledInputContainer>
