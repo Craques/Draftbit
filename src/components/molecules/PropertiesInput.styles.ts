@@ -19,6 +19,8 @@ export const Row = styled.div`
 export const PropertiesInputContainer = styled.div`
   background-color: #3d4b6c;
   padding: 12px;
+  background-color: #3d4b6c;
+  width: 320px;
 `;
 
 export const ChildContainer = styled.div<{ hasChildren: boolean }>`

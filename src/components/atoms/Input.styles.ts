@@ -37,6 +37,8 @@ export const StyledInputContainer = styled.div<InputPropTypes>`
   font-size: 16px;
   font-weight: bold;
   color: ${({ focused }) => (focused ? "white" : "#a5b0c6")};
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 `;
 
 export const DimensionsContainer = styled.div`
