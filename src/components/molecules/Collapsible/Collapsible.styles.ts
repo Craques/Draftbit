@@ -3,11 +3,11 @@ import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { Info } from "@styled-icons/evaicons-solid/Info";
 import { CollapsibleProps } from "./Collapsible.types";
 
-export const StyledCaretDown = styled(CaretDown)`
+export const StyledCaretDown = styled(CaretDown).attrs({ size: 24 })`
   margin-right: 8px;
 `;
 
-export const StyledInfoIcon = styled(Info)`
+export const StyledInfoIcon = styled(Info).attrs({ size: 24 })`
   margin-left: 8px;
   color: #a5b0c6;
 `;

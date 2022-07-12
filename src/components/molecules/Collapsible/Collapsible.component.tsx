@@ -16,9 +16,9 @@ export const Collapsible: React.FC<CollapsibleProps> = ({
   return (
     <div>
       <Button onClick={onToggle}>
-        <StyledCaretDown size={24} />
+        <StyledCaretDown />
         <label>{label}</label>
-        <StyledInfoIcon size={24} />
+        <StyledInfoIcon />
       </Button>
 
       <CollapsibleBody isOpen={isOpen}>{children}</CollapsibleBody>
