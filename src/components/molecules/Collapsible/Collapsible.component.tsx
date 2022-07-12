@@ -10,16 +10,18 @@ import { CollapsibleProps } from "./Collapsible.types";
 export const Collapsible: React.FC<CollapsibleProps> = ({
   label,
   children,
+  onToggle,
+  isOpen,
 }) => {
   return (
     <div>
-      <StyledTitleContainer>
+      <StyledTitleContainer onClick={onToggle}>
         <StyledCaretDown size={24} />
         <label>{label}</label>
         <StyledInfoIcon size={24} />
       </StyledTitleContainer>
 
-      <CollapsibleBody>{children}</CollapsibleBody>
+      {isOpen ? <CollapsibleBody>{children}</CollapsibleBody> : null}
     </div>
   );
 };
