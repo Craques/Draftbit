@@ -1,11 +1,13 @@
 import React from "react";
 import "./App.css";
-import { Input } from "./components/atoms/Input.component";
+import { PropertiesInput } from "./components/molecules/PropertiesInputs.component";
 
 function App() {
   return (
     <div className="App">
-      <Input name="margin-left" value="hello" />
+      <PropertiesInput onChange={(e) => null} property="margin">
+        <PropertiesInput onChange={(e) => null} property="padding" />
+      </PropertiesInput>
     </div>
   );
 }
