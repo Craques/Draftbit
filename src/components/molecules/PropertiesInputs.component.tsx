@@ -12,6 +12,7 @@ import { PropertiesInputProps } from "./PropertiesInput.types";
 export const PropertiesInput: React.FC<PropertiesInputProps> = ({
   children,
   onChange,
+  onBlur,
   property,
   propertyValues,
 }) => {
@@ -21,6 +22,7 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
         <Column>
           <Input
             onChange={onChange}
+            onBlur={onBlur}
             name={`${property}-left`}
             value={propertyValues[`${property}-left`]}
           />
@@ -29,6 +31,7 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
           <CenterColumnInputContainer>
             <Input
               onChange={onChange}
+              onBlur={onBlur}
               name={`${property}-top`}
               value={propertyValues[`${property}-top`]}
             />
@@ -39,6 +42,7 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
           <CenterColumnInputContainer>
             <Input
               onChange={onChange}
+              onBlur={onBlur}
               name={`${property}-bottom`}
               value={propertyValues[`${property}-bottom`]}
             />
@@ -47,6 +51,7 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
         <Column>
           <Input
             onChange={onChange}
+            onBlur={onBlur}
             name={`${property}-right`}
             value={propertyValues[`${property}-right`]}
           />

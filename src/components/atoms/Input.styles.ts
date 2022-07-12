@@ -10,8 +10,9 @@ export const StyledInput = styled.input<InputPropTypes>`
   outline: none;
   color: inherit;
   text-decoration-line: underline;
-  text-underline-offset: 1px;
-  text-decoration-color: #fdd600;
+  text-underline-offset: 2px;
+  text-decoration-color: ${({ focused, hasUpdatedValue }) =>
+    !focused && hasUpdatedValue ? "#fdd600" : "transparent"};
   text-decoration-style: dotted;
   font-weight: bold;
   text-align: center;
@@ -39,7 +40,8 @@ export const StyledInputContainer = styled.div<InputPropTypes>`
   border-radius: 8px;
   font-size: 1em;
   font-weight: bold;
-  color: ${({ focused }) => (focused ? "white" : "#a5b0c6")};
+  color: ${({ focused, hasUpdatedValue, value }) =>
+    (focused || hasUpdatedValue) && value?.length ? "white" : "#a5b0c6"};
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 `;

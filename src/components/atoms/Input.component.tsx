@@ -1,39 +1,40 @@
-import { useEffect, useState } from "react";
-import {
-  DimensionsContainer,
-  StyledInput,
-  StyledInputContainer,
-} from "./Input.styles";
+import { useState } from "react";
+import { StyledInput, StyledInputContainer } from "./Input.styles";
 import { InputPropTypes } from "./Input.types";
 
 export const Input = ({
   defaultValue = "auto",
-  value,
+  value = "",
   onChange,
+  onBlur,
   name,
-  dimensions = "px",
 }: InputPropTypes): JSX.Element => {
   const [focused, setFocused] = useState(false);
   const onFocus = () => setFocused(true);
-  const onBlur = () => setFocused(false);
 
-  useEffect(() => {
-    console.log("VALUE", value);
-  }, [value]);
+  const onInputBlur = () => {
+    onBlur && onBlur(name!, value);
+    setFocused(false);
+  };
+  const hasUpdatedValue = value !== defaultValue;
 
   return (
-    <StyledInputContainer focused={focused}>
+    <StyledInputContainer
+      focused={focused}
+      hasUpdatedValue={hasUpdatedValue}
+      value={value}
+    >
       <StyledInput
         value={value}
         onChange={onChange}
         name={name}
         onFocus={onFocus}
-        onBlur={onBlur}
+        onBlur={onInputBlur}
         focused={focused}
         width={value?.length ? value.length : defaultValue.length}
         placeholder={defaultValue}
+        hasUpdatedValue={!!value.length}
       />
-      <DimensionsContainer>{dimensions}</DimensionsContainer>
     </StyledInputContainer>
   );
 };
