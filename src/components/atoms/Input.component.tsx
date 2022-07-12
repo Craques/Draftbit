@@ -27,6 +27,7 @@ export const Input = ({
         onFocus={onFocus}
         onBlur={onBlur}
         focused={focused}
+        width={value?.length ? value.length : defaultValue.length}
       />
       <DimensionsContainer>{dimensions}</DimensionsContainer>
     </StyledInputContainer>

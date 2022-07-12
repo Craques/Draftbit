@@ -8,4 +8,5 @@ export interface InputPropTypes {
   value?: string;
   name?: string;
   dimensions?: string;
+  width?: number;
 }

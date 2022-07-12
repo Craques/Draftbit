@@ -4,8 +4,6 @@ import { InputPropTypes } from "./Input.types";
 //may add an overall theme to handle sizing and colors
 
 export const StyledInput = styled.input<InputPropTypes>`
-  padding-left: 8px;
-  padding-right: 0px;
   padding-bottom: 12px;
   padding-top: 12px;
   background-color: transparent;
@@ -19,11 +17,16 @@ export const StyledInput = styled.input<InputPropTypes>`
   text-align: center;
   border: none;
   flex-shrink: 1;
+  font-size: inherit;
+  width: ${({ width }) => width}em;
 `;
 
 export const StyledInputContainer = styled.div<InputPropTypes>`
   background-color: ${({ focused }) => (focused ? "#28334d" : "transparent")};
-  outline-color: ${({ focused }) => (focused ? "#1d8cbe" : "transparent")};
+  border-color: #1d8cbe;
+  border-width: ${({ focused }) => (focused ? 2 : 0)}px;
+  padding-left: 8px;
+  padding-right: 8px;
   display: flex;
   flex-direction: row;
   width: max-content;
