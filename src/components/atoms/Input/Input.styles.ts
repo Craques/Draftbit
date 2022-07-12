@@ -4,15 +4,15 @@ import { InputPropTypes } from "./Input.types";
 //may add an overall theme to handle sizing and colors
 
 export const StyledInput = styled.input<InputPropTypes>`
-  padding-bottom: 8px;
-  padding-top: 8px;
+  padding-bottom: ${({ theme }) => theme.spacing.small}px;
+  padding-top: ${({ theme }) => theme.spacing.small}px;
   background-color: transparent;
   outline: none;
   color: inherit;
   text-decoration-line: underline;
 
-  text-decoration-color: ${({ focused, hasUpdatedValue }) =>
-    !focused && hasUpdatedValue ? "#fdd600" : "transparent"};
+  text-decoration-color: ${({ focused, value, theme }) =>
+    !focused && value?.length ? theme.colors.highlight : "transparent"};
   text-decoration-style: dotted;
   font-weight: bold;
   text-align: center;
@@ -21,13 +21,14 @@ export const StyledInput = styled.input<InputPropTypes>`
   font-size: inherit;
   width: 4em;
   ::placeholder {
-    color: #a5b0c6;
+    color: ${({ theme }) => theme.colors.placeholderText};
   }
 `;
 
 export const StyledInputContainer = styled.div<InputPropTypes>`
-  background-color: ${({ focused }) => (focused ? "#28334d" : "transparent")};
-  outline-color: #1d8cbe;
+  background-color: ${({ focused, theme }) =>
+    focused ? theme.colors.blueSecondary : "transparent"};
+  outline-color: ${({ theme }) => theme.colors.inputOutline};
   outline-width: 2px;
   outline-width: ${({ focused }) => (focused ? 2 : 0)}px;
   outline-style: solid;
@@ -38,17 +39,10 @@ export const StyledInputContainer = styled.div<InputPropTypes>`
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
-  color: ${({ focused, hasUpdatedValue, value }) =>
-    (focused || hasUpdatedValue) && value?.length ? "white" : "#a5b0c6"};
+  color: ${({ focused, hasUpdatedValue, value, theme }) =>
+    (focused || hasUpdatedValue) && value?.length
+      ? "white"
+      : theme.colors.placeholderText};
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-`;
-
-export const DimensionsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  margin-left: 4px;
-  margin-right: 8px;
-  color: inherit;
 `;
