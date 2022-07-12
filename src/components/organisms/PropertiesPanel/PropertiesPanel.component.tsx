@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { PropertiesInput } from "../../molecules/PropertiesInputs.component";
+import { PropertiesInput } from "../../molecules/PropertiesInputs/PropertiesInputs.component";
 
 export const PropertiesPanel = () => {
   const [propertyValues, setPropertyValues] = useState<Record<string, string>>(
