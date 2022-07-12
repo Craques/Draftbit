@@ -2,7 +2,7 @@
   "name": "@draftbit/coding-challenge-prism",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://craques.github.io/draftbit/",
+  "homepage": "https://craques.github.io/Draftbit/",
   "dependencies": {
     "@rescript/react": "^0.10.3",
     "@testing-library/jest-dom": "^5.11.4",
