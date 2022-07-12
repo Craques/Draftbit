@@ -1,9 +1,9 @@
 import React from "react";
+import { Button } from "../../atoms/Button/Button.component";
 import {
   CollapsibleBody,
   StyledCaretDown,
   StyledInfoIcon,
-  StyledTitleContainer,
 } from "./Collapsible.styles";
 import { CollapsibleProps } from "./Collapsible.types";
 
@@ -15,11 +15,11 @@ export const Collapsible: React.FC<CollapsibleProps> = ({
 }) => {
   return (
     <div>
-      <StyledTitleContainer onClick={onToggle}>
+      <Button onClick={onToggle}>
         <StyledCaretDown size={24} />
         <label>{label}</label>
         <StyledInfoIcon size={24} />
-      </StyledTitleContainer>
+      </Button>
 
       <CollapsibleBody isOpen={isOpen}>{children}</CollapsibleBody>
     </div>

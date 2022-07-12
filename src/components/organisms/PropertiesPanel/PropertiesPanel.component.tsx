@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { PropertiesInput } from "../../molecules/PropertiesInputs/PropertiesInputs.component";
 import { PropertiesPanelProps } from "./PropertiesPanel.types";
 

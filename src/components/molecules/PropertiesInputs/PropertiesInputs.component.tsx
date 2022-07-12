@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "../../atoms/Input.component";
+import { Input } from "../../atoms/Input/Input.component";
 import {
   CenterColumnInputContainer,
   ChildContainer,
