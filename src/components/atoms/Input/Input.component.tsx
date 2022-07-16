@@ -8,7 +8,7 @@ export const Input: React.FC<InputProps> = ({
   onChange,
   onBlur,
   name,
-  testId = "text",
+  testId = "text-input",
 }): JSX.Element => {
   const [focused, setFocused] = useState(false);
   const onFocus = () => setFocused(true);
@@ -28,7 +28,7 @@ export const Input: React.FC<InputProps> = ({
         onBlur={onInputBlur}
         focused={focused}
         placeholder={placeholder}
-        data-testid={`${testId}-input`}
+        data-testid={testId}
       />
     </StyledInputContainer>
   );

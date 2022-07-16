@@ -25,6 +25,7 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
             onBlur={onBlur}
             name={`${property}-left`}
             value={propertyValues[`${property}-left`]}
+            testId={`${property}-left-input`}
           />
         </Column>
         <Column>
@@ -34,6 +35,7 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
               onBlur={onBlur}
               name={`${property}-top`}
               value={propertyValues[`${property}-top`]}
+              testId={`${property}-top-input`}
             />
           </CenterColumnInputContainer>
           <ChildContainer hasChildren={children != null}>
@@ -45,6 +47,7 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
               onBlur={onBlur}
               name={`${property}-bottom`}
               value={propertyValues[`${property}-bottom`]}
+              testId={`${property}-bottom-input`}
             />
           </CenterColumnInputContainer>
         </Column>
@@ -54,6 +57,7 @@ export const PropertiesInput: React.FC<PropertiesInputProps> = ({
             onBlur={onBlur}
             name={`${property}-right`}
             value={propertyValues[`${property}-right`]}
+            testId={`${property}-right-input`}
           />
         </Column>
       </Row>
