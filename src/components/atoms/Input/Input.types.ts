@@ -1,6 +1,6 @@
 import React from "react";
 
-export interface InputPropTypes {
+export interface InputProps {
   placeholder?: string;
   focused?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -10,4 +10,5 @@ export interface InputPropTypes {
   name?: string;
   dimensions?: string;
   width?: number;
+  testId?: string;
 }

@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { StyledInput, StyledInputContainer } from "./Input.styles";
-import { InputPropTypes } from "./Input.types";
+import { InputProps } from "./Input.types";
 
-export const Input: React.FC<InputPropTypes> = ({
+export const Input: React.FC<InputProps> = ({
   placeholder = "auto",
   value = "",
   onChange,
   onBlur,
   name,
+  testId = "text",
 }): JSX.Element => {
   const [focused, setFocused] = useState(false);
   const onFocus = () => setFocused(true);
@@ -27,6 +28,7 @@ export const Input: React.FC<InputPropTypes> = ({
         onBlur={onInputBlur}
         focused={focused}
         placeholder={placeholder}
+        data-testid={`${testId}-input`}
       />
     </StyledInputContainer>
   );

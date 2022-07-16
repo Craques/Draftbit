@@ -8,20 +8,18 @@ export const Prism: React.FC<PrismProps> = ({
   propertyValues,
 }) => {
   return (
-    <>
+    <PropertiesInput
+      onChange={onChange}
+      onBlur={onBlur}
+      property="margin"
+      propertyValues={propertyValues}
+    >
       <PropertiesInput
         onChange={onChange}
         onBlur={onBlur}
-        property="margin"
+        property="padding"
         propertyValues={propertyValues}
-      >
-        <PropertiesInput
-          onChange={onChange}
-          onBlur={onBlur}
-          property="padding"
-          propertyValues={propertyValues}
-        />
-      </PropertiesInput>
-    </>
+      />
+    </PropertiesInput>
   );
 };
