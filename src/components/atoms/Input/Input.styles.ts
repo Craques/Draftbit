@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { InputPropTypes } from "./Input.types";
+import { InputProps } from "./Input.types";
 
 //may add an overall theme to handle sizing and colors
 
-export const StyledInput = styled.input<InputPropTypes>`
+export const StyledInput = styled.input<InputProps>`
   padding-bottom: ${({ theme }) => theme.spacing.small}px;
   padding-top: ${({ theme }) => theme.spacing.small}px;
   background-color: transparent;
@@ -25,7 +25,7 @@ export const StyledInput = styled.input<InputPropTypes>`
   }
 `;
 
-export const StyledInputContainer = styled.div<InputPropTypes>`
+export const StyledInputContainer = styled.div<InputProps>`
   background-color: ${({ focused, theme }) =>
     focused ? theme.colors.blueSecondary : "transparent"};
   outline-color: ${({ theme }) => theme.colors.inputOutline};
