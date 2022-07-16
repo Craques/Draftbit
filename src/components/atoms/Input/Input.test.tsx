@@ -47,18 +47,16 @@ describe("Input", () => {
     expect(input).toHaveValue("initialValue");
   });
 
-  it("should render the correct background color", async () => {
+  it.todo("should render the correct background color on focus");
+
+  it.todo("should render outline on focus");
+
+  it("should render underline color on text if it has changed and not focused", () => {
     renderWithProviders(getComponent({ value: "initialValue" }));
     const input = screen.getByTestId("text-input");
 
-    input.focus();
-    screen.debug();
-    expect(input).toHaveFocus();
-    expect(onFocusMock).toHaveBeenCalled();
-    // expect(input).toHaveStyle(
-    //   `background-color: ${theme.colors.blueSecondary}`,
-    // );
+    expect(input).toHaveStyle(
+      `text-decoration-color: ${theme.colors.highlight}`,
+    );
   });
-
-  it("should render outline on focus", () => {});
 });
