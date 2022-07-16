@@ -78,4 +78,24 @@ describe("PropertiesInput", () => {
       expect(screen.getByTestId(testId)).toHaveValue(value);
     },
   );
+
+  it("should render child if available", () => {
+    renderWithProviders(
+      getComponent({
+        onBlur: onBlurMock,
+        onChange: onChangeMock,
+        property: "margin",
+        propertyValues: {
+          "margin-left": "20px",
+          "margin-right": "30px",
+          "margin-top": "10px",
+          "margin-bottom": "15px",
+        },
+        children: <div data-testid="child-element">Hello world</div>,
+      }),
+    );
+
+    expect(screen.getByTestId("child-element")).toBeTruthy();
+    expect(screen.getByText(/Hello World/i)).toBeTruthy();
+  });
 });
