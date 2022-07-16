@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
 import React from "react";
 import { PropertiesInput, PropertiesInputProps } from ".";
 import { renderWithProviders } from "../../../helpers/testHelper";
@@ -97,5 +97,32 @@ describe("PropertiesInput", () => {
 
     expect(screen.getByTestId("child-element")).toBeTruthy();
     expect(screen.getByText(/Hello World/i)).toBeTruthy();
+  });
+
+  it.each`
+    testId
+    ${"margin-top-input"}
+    ${"margin-bottom-input"}
+    ${"margin-left-input"}
+    ${"margin-right-input"}
+  `("should fire on change when changed", ({ testId }) => {
+    renderWithProviders(
+      getComponent({
+        onBlur: onBlurMock,
+        onChange: onChangeMock,
+        property: "margin",
+        propertyValues: {
+          "margin-left": "20px",
+          "margin-right": "30px",
+          "margin-top": "10px",
+          "margin-bottom": "15px",
+        },
+        children: <div data-testid="child-element">Hello world</div>,
+      }),
+    );
+
+    const input = screen.getByTestId(testId);
+    fireEvent.change(input, { target: { value: "hello" } });
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
 });
